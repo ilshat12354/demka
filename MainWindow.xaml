@@ -1,0 +1,48 @@
+﻿<Window x:Class="demka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="470" Width="1000" MaxHeight="800" MaxWidth="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0">
+            <DataGrid Grid.Row="0" x:Name="Tkani" ColumnWidth="auto" IsReadOnly="True" AutoGenerateColumns="False" Height="350"> 
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Artikul" Binding="{Binding artikul_tkani}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Naimenovanie" Binding="{Binding naimenovanie}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="risunok" Binding="{Binding risunok}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="procent" Binding="{Binding procent_sostav}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="shirina" Binding="{Binding shirina}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="dlina" Binding="{Binding dlina}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="cena" Binding="{Binding cena}"></DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="Edit" Content="edit" Click="Edit_Click" Style="{StaticResource Button_style}"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="Delete" Content="delete" Click="Delete_Click" Style="{StaticResource Button_style}"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="Update" Content="Update" Click="Update_Click" Style="{StaticResource Button_style}"></Button>
+            <Button x:Name="Back" Content="Back" Click="Back_Click" Style="{StaticResource Button_style}"></Button>
+            <Button x:Name="Add" Content="Add" Click="Add_Click" Style="{StaticResource Button_style}"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
