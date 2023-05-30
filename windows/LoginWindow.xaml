@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:demka.windows"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="550" Width="500" MaxHeight="600" MaxWidth="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="LoginWindow" Height="700" Width="500" MaxHeight="700" MaxWidth="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -17,11 +17,14 @@
         <StackPanel Grid.Row="1">
             <Label Content="Логин" Style="{StaticResource label_style}"></Label>
             <TextBox x:Name="Login_textbox" Style="{StaticResource Textbox_style}"></TextBox>
+            <Label Content="Почта" Style="{StaticResource label_style}"></Label>
+            <TextBox x:Name="Email_textbox" Style="{StaticResource Textbox_style}"></TextBox>
             <Label Content="Пароль" Style="{StaticResource label_style}"></Label>
             <TextBox x:Name="Password_textbox" Style="{StaticResource Textbox_style}"></TextBox>
             <Label Content="Роль" Style="{StaticResource label_style}"></Label>
             <ComboBox x:Name="Role" Style="{StaticResource Combobox_style}"></ComboBox>
             <Button x:Name="Login_button" Content="Зарегистрироваться" Click="Login_button_Click" Style="{StaticResource Button_style}"></Button>
+            <Button x:Name="back" Content="Назад" Click="back_Click" Style="{StaticResource Button_style}"></Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -59,7 +59,20 @@ namespace demka
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
+            tkani tk = (sender as Button).DataContext as tkani;
 
+            using(demkaEntities db = new demkaEntities())
+            {
+                foreach(tkani tkani in db.tkani)
+                {
+                    if(tk.artikul_tkani == tkani.artikul_tkani)
+                    {
+                        db.tkani.Remove(tkani);
+                        MessageBox.Show("Успешно");
+                    }
+                }
+                db.SaveChanges();
+            }
         }
     }
 }

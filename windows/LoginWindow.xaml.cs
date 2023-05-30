@@ -46,6 +46,7 @@ namespace demka.windows
                 role role1 = new role();
 
                 pz.login = Login_textbox.Text;
+                pz.email = Email_textbox.Text;
                 pz.password = Password_textbox.Text;
                 
                 foreach(role r in db.role)
@@ -65,6 +66,13 @@ namespace demka.windows
             this.Hide();
             MainWindow main = new MainWindow();
             main.Show();
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            AutorizeWindow aw = new AutorizeWindow();
+            aw.Show();
         }
     }
 }
